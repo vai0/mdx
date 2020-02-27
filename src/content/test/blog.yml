@@ -1,0 +1,6 @@
+foo: !markdown |
+  # bar
+bar: >-
+  # bar
+chi: !mdx |
+  # chi

@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -13,8 +15,32 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `test`,
+        path: `${__dirname}/src/content/test`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `test`,
+        path: `${__dirname}/src/content/test-mdx`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-transformer-yaml-full`,
+      options: {
+        plugins: [
+          `gatsby-yaml-full-markdown`, // Enable !markdown tags
+          `mdx-yaml-full`,
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
